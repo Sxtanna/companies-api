@@ -1,20 +1,13 @@
 package com.sxtanna.mc.companies.util;
 
 import com.sxtanna.mc.companies.Companies;
-import com.sxtanna.mc.companies.base.State;
-import com.sxtanna.mc.companies.util.base.MySQLProvider;
-import com.sxtanna.mc.companies.util.func.ExceptionCatchingConsumer;
-import com.sxtanna.mc.companies.util.func.ExceptionCatchingFunction;
-import com.sxtanna.mc.companies.util.func.ExceptionCatchingSupplier;
+import com.sxtanna.mc.companies.data.base.MySQLProvider;
 import org.bukkit.plugin.Plugin;
 
 import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Arrays;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Level;

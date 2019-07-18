@@ -1,4 +1,4 @@
-package com.sxtanna.mc.companies.util.base;
+package com.sxtanna.mc.companies.data.base;
 
 import com.sxtanna.mc.companies.util.func.ExceptionCatchingConsumer;
 

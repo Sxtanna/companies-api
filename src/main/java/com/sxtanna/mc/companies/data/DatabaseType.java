@@ -1,4 +1,4 @@
-package com.sxtanna.mc.companies.data.base;
+package com.sxtanna.mc.companies.data;
 
 import java.util.Optional;
 

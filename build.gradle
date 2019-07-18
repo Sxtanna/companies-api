@@ -1,0 +1,53 @@
+plugins {
+	id 'java'
+	id 'idea'
+}
+
+group 'com.sxtanna.mc'
+version '1.0'
+
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+idea {
+	module.downloadJavadoc = true
+	module.downloadSources = true
+}
+
+sourceSets {
+	test.compileClasspath += configurations.compileOnly
+	test.runtimeClasspath += configurations.compileOnly
+}
+
+test {
+	useJUnitPlatform()
+}
+
+
+repositories {
+	mavenCentral()
+	
+	maven {
+		url = "https://papermc.io/repo/repository/maven-public/"
+	}
+	maven {
+		url = "https://hub.spigotmc.org/nexus/content/repositories/snapshots/"
+	}
+}
+
+dependencies {
+	// main
+	compileOnly "org.spigotmc:spigot-api:+"
+	
+	// test
+	testCompile "org.assertj:assertj-core:3.11.1"
+	testCompile "com.github.seeseemelk:MockBukkit-v1.13:+"
+	
+	testCompile "org.junit.jupiter:junit-jupiter-engine:5.4.2"
+	testRuntime "org.junit.jupiter:junit-jupiter-engine:5.4.2"
+	
+	// database
+	compileOnly "com.zaxxer:HikariCP:+"
+	//compileOnly "redis.clients:jedis:+"
+}

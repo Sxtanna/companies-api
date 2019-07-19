@@ -15,6 +15,7 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 public final class Helper
@@ -25,6 +26,7 @@ public final class Helper
 	}
 
 
+	// exception
 	public static void ignoreException(ExceptionCatchingRunnable runnable)
 	{
 		try
@@ -52,12 +54,25 @@ public final class Helper
 	}
 
 
+	// collection helpers
 	public static <T, R> List<R> map(Collection<T> collection, Function<T, R> function)
 	{
 		return collection.stream().map(function).collect(Collectors.toList());
 	}
 
+	public static <K, V> V lazyGetOrDefault(Map<K, V> map, K key, Supplier<V> function)
+	{
+		final V val = map.get(key);
+		if (val != null)
+		{
+			return val;
+		}
 
+		return function.get();
+	}
+
+
+	// collection creators
 	public static <T> Set<T> newSet()
 	{
 		return new HashSet<>();
@@ -74,6 +89,7 @@ public final class Helper
 	}
 
 
+	// general functions
 	public static <T> T apply(T data, Consumer<T> consumer)
 	{
 		ignoreException(() -> consumer.accept(data));

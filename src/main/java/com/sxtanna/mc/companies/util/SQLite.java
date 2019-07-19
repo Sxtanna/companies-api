@@ -47,7 +47,7 @@ public final class SQLite implements MySQLProvider
 		}
 		catch (ClassNotFoundException ex)
 		{
-			companies.getPlugin().getLogger().log(Level.SEVERE, "failed to load sqlite sqlite implementation", ex);
+			companies.getPlugin().getLogger().log(Level.SEVERE, "failed to load sqlite implementation", ex);
 		}
 	}
 

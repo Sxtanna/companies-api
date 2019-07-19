@@ -15,7 +15,7 @@ public interface Config extends Named, Loads, Saves, RequiresPlugin
 	File getFile();
 
 
-	default Optional<String> getValueAtPath(Configuration config, String path)
+	default Optional<String> getValueAtPath(final Configuration config, final String path)
 	{
 		return Optional.ofNullable(config).map(conf -> conf.getString(path));
 	}

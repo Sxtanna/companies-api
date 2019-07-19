@@ -3,6 +3,7 @@ package com.sxtanna.mc.companies;
 import com.sxtanna.mc.companies.base.RequiresPlugin;
 import com.sxtanna.mc.companies.base.State;
 import com.sxtanna.mc.companies.conf.type.CompanyConfig;
+import com.sxtanna.mc.companies.conf.type.MessageConfig;
 import com.sxtanna.mc.companies.conf.type.MySQLDBConfig;
 //import com.sxtanna.mc.companies.conf.type.RedisDBConfig;
 import com.sxtanna.mc.companies.core.Company;
@@ -18,7 +19,9 @@ import java.util.function.Consumer;
 public interface Companies extends State, RequiresPlugin
 {
 
-	CompanyConfig config();
+	CompanyConfig companyConfig();
+
+	MessageConfig messageConfig();
 
 
 	MySQLDBConfig createOrLoadMySQLDBConfig();
